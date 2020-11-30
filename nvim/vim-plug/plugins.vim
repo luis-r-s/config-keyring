@@ -36,27 +36,10 @@ call plug#end()
 let g:vimwiki_html_header_numbering = 2
 let g:vimwiki_html_header_numbering_sym = ')'
 
-let wiki_1 = {
+let wiki = {
   \ 'name': 'Saturn Valley',
-  \ 'path': '~/.git/Saturn-Wiki',
-  \ 'path_html': '~/.git/Saturn-Wiki.com',
-  \ 'auto_export': 0,
-  \ 'auto_toc': 0,
-  \ 'index': 'index',
-  \ 'ext': '.wiki',
-  \ 'syntax': 'default',
-  \ 'links_space_char': ' ',
-  \ 'template_path': '~/vimwiki/templates/',
-  \ 'template_default': 'default',
-  \ 'template_ext': '.tpl',
-  \ 'css_name': 'style.css',
-  \ 'nested_syntaxes': {},
-  \ }
-
-let wiki_2 = {
-  \ 'name': 'UPR-Computer Science',
-  \ 'path': '~/UPR/wiki',
-  \ 'path_html': '~/UPR/html_wiki',
+  \ 'path': '~/Saturn-Wiki',
+  \ 'path_html':  '~/Saturn-Wiki-html',
   \ 'auto_export': 0,
   \ 'auto_toc': 0,
   \ 'index': 'index',
@@ -70,24 +53,7 @@ let wiki_2 = {
   \ 'nested_syntaxes': {'R': 'R', 'python': 'python'},
   \ }
 
-let wiki_3 = {
-  \ 'name': 'Abexus - Intern',
-  \ 'path': '/home/kittyhaze/Insync/lrivera@abexuspr.com/Google Drive/Mando/vimwiki',
-  \ 'path_html': '/home/kittyhaze/Insync/lrivera@abexuspr.com/Google Drive/Mando/html_wiki',
-  \ 'auto_export': 0,
-  \ 'auto_toc': 0,
-  \ 'index': 'main',
-  \ 'ext': '.wiki',
-  \ 'syntax': 'default',
-  \ 'links_space_char': ' ',
-  \ 'template_path': '~/vimwiki/templates/',
-  \ 'template_default': 'default',
-  \ 'template_ext': '.tpl',
-  \ 'css_name': 'style.css',
-  \ 'nested_syntaxes': {'python': 'python'},
-  \ }
-
-let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
+let g:vimwiki_list = [wiki]
 
 
 " settings :: NERD TREE
