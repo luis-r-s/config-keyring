@@ -66,4 +66,4 @@ endfunction
 let mapleader= " "
 nnoremap <silent><Leader>h :call ToggleHiddenAll()<CR>
 nnoremap <silent><Leader>n :NERDTreeToggle<CR>
-nnoremap <silent><Leader>g :Goyo<CR>
+nnoremap <silent><Leader>c :Calendar -view=month<CR>

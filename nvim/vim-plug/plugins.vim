@@ -8,67 +8,62 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-    " Things you can do with fzf and Vim.
-    Plug 'junegunn/fzf.vim'
-    " Distraction-free writing in Vim.
-    Plug 'junegunn/goyo.vim'
-    " Better Syntax Support
-    Plug 'sheerun/vim-polyglot'
+    " Vim Wiki, an organizational tool
+    Plug 'vimwiki/vimwiki'
+    " A calendar app for vim
+    Plug 'itchyny/calendar.vim'
     " File Explorer
     Plug 'scrooloose/NERDTree'
+    " Better Syntax Support
+    Plug 'sheerun/vim-polyglot'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " R session support much like in R Studio
     Plug 'jalvesaq/Nvim-R'
-    " Dark, high-contrast color scheme for vim
-    Plug 'bignimbus/pop-punk.vim'
     " Lean & mean status/tabline for vim that's light as air.
     Plug 'vim-airline/vim-airline'
     " This is the official theme repository for vim-airline
     Plug 'vim-airline/vim-airline-themes'
-    " Vim Wiki, an organizational tool
-    Plug 'vimwiki/vimwiki'
+    " Things you can do with fzf and Vim.
+    Plug 'junegunn/fzf.vim'
     
 call plug#end()
 
 " settings :: vimwiki
 
 let g:vimwiki_html_header_numbering = 2
-let g:vimwiki_html_header_numbering_sym = ')'
 
 let wiki = {
   \ 'name': 'Saturn Valley',
   \ 'path': '~/Saturn-Wiki',
-  \ 'path_html':  '~/Saturn-Wiki-html',
-  \ 'auto_export': 0,
-  \ 'auto_toc': 0,
+  \ 'path_html':  '~/Saturn-Wiki/html',
+  \ 'auto_export': 1,
+  \ 'auto_toc': 1,
   \ 'index': 'index',
   \ 'ext': '.wiki',
   \ 'syntax': 'default',
-  \ 'links_space_char': ' ',
+  \ 'links_space_char': '_',
   \ 'template_path': '~/vimwiki/templates/',
   \ 'template_default': 'default',
   \ 'template_ext': '.tpl',
   \ 'css_name': 'style.css',
-  \ 'nested_syntaxes': {'R': 'R', 'python': 'python'},
+  \ 'nested_syntaxes': {'R': 'R', 'python': 'python', 'c++': 'cpp'},
   \ }
 
 let g:vimwiki_list = [wiki]
+let g:vimeiki_use_calendar = 0
 
+" settings :: calendar.vim
+let g:calendar_task_width = 40
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+source ~/.cache/calendar.vim/credentials.vim
 
 " settings :: NERD TREE
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 
-" settings :: pop-punk.vim plugin
-" colorscheme pop-punk
-" hi Normal guibg=NONE ctermbg=NONE
-
-" settign ansi colors for terminal
-let g:terminal_ansi_colors = pop_punk#AnsiColors()
-
 " settings :: vim-airline-themes
-" let g:airline_theme = 'pop_punk'
 let g:airline_filetype_overrides = {
   \ 'help':  [ 'Help', '%f' ],
   \ 'nerdtree': [ get(g:, 'NERDTreeStatusline', 'NERD'), '' ],
